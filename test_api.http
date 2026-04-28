@@ -1,0 +1,64 @@
+### Test API Health
+GET http://localhost:8000/health
+
+### Create New Employee
+POST http://localhost:8000/api/v1/employees
+Content-Type: application/json
+
+{
+  "first_name": "Sarah",
+  "last_name": "Johnson",
+  "email": "sarah.johnson@example.com",
+  "phone": "+1987654321",
+  "department": "Marketing",
+  "position": "Marketing Manager",
+  "salary": 85000.00,
+  "hire_date": "2024-01-20",
+  "address": "456 Park Avenue, New York, NY 10002",
+  "is_active": true
+}
+
+### Create Another Employee
+POST http://localhost:8000/api/v1/employees
+Content-Type: application/json
+
+{
+  "first_name": "Mike",
+  "last_name": "Wilson",
+  "email": "mike.wilson@example.com",
+  "phone": "+1555123456",
+  "department": "Engineering",
+  "position": "DevOps Engineer",
+  "salary": 92000.00,
+  "hire_date": "2024-01-10",
+  "address": "789 Tech Park, San Francisco, CA 94105",
+  "is_active": true
+}
+
+### Create Employee with Minimal Fields (required only)
+POST http://localhost:8000/api/v1/employees
+Content-Type: application/json
+
+{
+  "first_name": "Emma",
+  "last_name": "Brown",
+  "email": "emma.brown@example.com",
+  "department": "Sales",
+  "position": "Sales Representative",
+  "salary": 65000.00,
+  "hire_date": "2024-01-25"
+}
+
+### Try to Create Duplicate Employee (should fail)
+POST http://localhost:8000/api/v1/employees
+Content-Type: application/json
+
+{
+  "first_name": "Duplicate",
+  "last_name": "User",
+  "email": "sarah.johnson@example.com",
+  "department": "IT",
+  "position": "Developer",
+  "salary": 70000.00,
+  "hire_date": "2024-01-30"
+}
