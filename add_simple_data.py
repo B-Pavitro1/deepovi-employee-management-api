@@ -5,8 +5,7 @@ Run this after setup to populate test data
 
 from app.database import SessionLocal
 from app import crud, schemas
-from datetime import date, timedelta
-import random
+from datetime import date
 
 def add_sample_employees():
     db = SessionLocal()

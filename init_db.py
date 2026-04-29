@@ -1,6 +1,4 @@
 from app.database import engine, Base
-from app import models
-import pymysql
 
 def init_database():
     """Initialize database tables"""
